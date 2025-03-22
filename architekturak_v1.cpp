@@ -1,4 +1,13 @@
-﻿#include <iostream>
+/*
+1. verzió:
+Készítse el a fordított gondoltam egy számot játékot _asm blokkokkal a következő elemekkel:
+-	A felhasználótól bekért szám tartománya 1-1000 közé essen
+-	A gép találja ki a bekért számot véletlen számok generálásával.
+-	Írja ki a gép által gondolt számot, és hogy milyen relációban van (kisebb vagy nagyobb).
+-	A játék legvégén írja ki, hány találatból találta ki a gép a játékos által gondolt számot.
+*/
+
+#include <iostream>
 #include <ctime>
 
 int main()
