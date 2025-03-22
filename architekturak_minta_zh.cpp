@@ -7,9 +7,9 @@ int main()
 {
     setlocale(LC_ALL, "HU");
 
-    //1. rész
+    //1. rÃ©sz
 
-    //1. feladat - Adjon össze egy regisztert és egy változót!
+    //1. feladat - Adjon Ã¶ssze egy regisztert Ã©s egy vÃ¡ltozÃ³t!
     int a = 97;
     _asm
     {
@@ -17,7 +17,7 @@ int main()
         add eax, a;
     }
 
-    //2. feladat - Adatmozgató utasításokkal cseréljen ki két változót!
+    //2. feladat - AdatmozgatÃ³ utasÃ­tÃ¡sokkal cserÃ©ljen ki kÃ©t vÃ¡ltozÃ³t!
     int b = 98;
     _asm
     {
@@ -27,16 +27,16 @@ int main()
         mov b, eax;
     }
 
-    //3. feladat - Képezze az EBX regiszter négyzetét az EDX regiszterbe!
+    //3. feladat - KÃ©pezze az EBX regiszter nÃ©gyzetÃ©t az EDX regiszterbe!
     _asm
     {
         mov ebx, 86;
         mov eax, ebx;
         mul ebx;
-        mov edx, eax;   //EAX:EDX párost használjuk ilyen mûveleteknél
+        mov edx, eax;   //EAX:EDX pÃ¡rost hasznÃ¡ljuk ilyen mÅ±veleteknÃ©l
     }
 
-    //4. feladat - Ossza el 120-at 58-al egész típusú mûveletekkel!
+    //4. feladat - Ossza el 120-at 58-al egÃ©sz tÃ­pusÃº mÅ±veletekkel!
     _asm
     {
         mov eax, 120;
@@ -45,19 +45,19 @@ int main()
         div ecx;
     }
 
-    //5. feladat - Adjon nulla értéket az EDI regiszternek MOV utasítás használata nélkül!
+    //5. feladat - Adjon nulla Ã©rtÃ©ket az EDI regiszternek MOV utasÃ­tÃ¡s hasznÃ¡lata nÃ©lkÃ¼l!
     _asm
     {
-        xor edi, edi;   //kizáró vagy = azonos bitek esetén 0-át (hamis) ad vissza
+        xor edi, edi;   //kizÃ¡rÃ³ vagy = azonos bitek esetÃ©n 0-Ã¡t (hamis) ad vissza
     }
 
-    //6. feladat - Állítsa be a carry flaget 0-ba!
+    //6. feladat - ÃllÃ­tsa be a carry flaget 0-ba!
     _asm
     {
         CLC;    //CLear Carry flag
     }
 
-    //7. feladat - Végezze el az EDX regiszter aritmetikai jobbra léptetését 19-szer CL regiszter használatával!
+    //7. feladat - VÃ©gezze el az EDX regiszter aritmetikai jobbra lÃ©ptetÃ©sÃ©t 19-szer CL regiszter hasznÃ¡latÃ¡val!
     _asm
     {
         mov cl, 19;
@@ -65,33 +65,33 @@ int main()
     }
 
 
-    //2. rész
+    //2. rÃ©sz
 
     /*
-    Készítse el a gondoltam egy számot játékot _asm blokkokkal a következõ elemekkel:
-    - A gondolt szám tartománya 1 és 1000 közé essen.
-    - Számolja meg a találatok számát, és jegyezze meg a késõbbi játék során.
-    - Addig játsszon a játékos, ameddig csak akar (legyen a végén egy új játék lehetõség)
-    - A játék legvégén írja ki, hány játékot játszott és hány találata volt összesen.
-    + reláció
+    KÃ©szÃ­tse el a gondoltam egy szÃ¡mot jÃ¡tÃ©kot _asm blokkokkal a kÃ¶vetkezÅ‘ elemekkel:
+    - A gondolt szÃ¡m tartomÃ¡nya 1 Ã©s 1000 kÃ¶zÃ© essen.
+    - SzÃ¡molja meg a talÃ¡latok szÃ¡mÃ¡t, Ã©s jegyezze meg a kÃ©sÅ‘bbi jÃ¡tÃ©k sorÃ¡n.
+    - Addig jÃ¡tsszon a jÃ¡tÃ©kos, ameddig csak akar (legyen a vÃ©gÃ©n egy Ãºj jÃ¡tÃ©k lehetÅ‘sÃ©g)
+    - A jÃ¡tÃ©k legvÃ©gÃ©n Ã­rja ki, hÃ¡ny jÃ¡tÃ©kot jÃ¡tszott Ã©s hÃ¡ny talÃ¡lata volt Ã¶sszesen.
+    + relÃ¡ciÃ³
 
-    - véletlen szám generáláshoz a rand() függvény használható (de a tartomány már _asm! )
-    - bekéréshez scanf_s, kiíráshoz printf-et használjon
-    - változóknak kezdõérték adható.
+    - vÃ©letlen szÃ¡m generÃ¡lÃ¡shoz a rand() fÃ¼ggvÃ©ny hasznÃ¡lhatÃ³ (de a tartomÃ¡ny mÃ¡r _asm! )
+    - bekÃ©rÃ©shez scanf_s, kiÃ­rÃ¡shoz printf-et hasznÃ¡ljon
+    - vÃ¡ltozÃ³knak kezdÅ‘Ã©rtÃ©k adhatÃ³.
     */
 
-	srand((unsigned)time(NULL));
+    srand((unsigned)time(NULL));
 	
-    int random, tipp, nTipp, sumTipp = 0, sumJáték = 0;
+    int random, tipp, nTipp, sumTipp = 0, sumJÃ¡tÃ©k = 0;
     char i;
 
-    //do-while féleség
+    //do-while fÃ©lesÃ©g
     
     _asm
     {
-    újKör:
-        inc sumJáték;
-        mov nTipp, 0;   //tipp/kör
+    ÃºjKÃ¶r:
+        inc sumJÃ¡tÃ©k;
+        mov nTipp, 0;   //tipp/kÃ¶r
     }
 
     _asm    //random
@@ -116,23 +116,23 @@ int main()
 
         mov eax, tipp;
         cmp eax, random;
-        je egyenlõ;
+        je egyenlÅ‘;
         jg nagyobb;
         jl kisebb;
     }
 
     _asm nagyobb:
-    printf("A keresett szám kisebb!\n");
+    printf("A keresett szÃ¡m kisebb!\n");
     _asm jmp compare;
 
     _asm kisebb:
-    printf("A keresett szám nagyobb!\n");
+    printf("A keresett szÃ¡m nagyobb!\n");
     _asm jmp compare;
 
-    _asm egyenlõ:
-    printf("\nTalált-süllyedt! %d tippbõl találtad ki!\nÖsszes játék = %d, összes tipp = %d\n\n", nTipp, sumJáték, sumTipp);
+    _asm egyenlÅ‘:
+    printf("\nTalÃ¡lt-sÃ¼llyedt! %d tippbÅ‘l talÃ¡ltad ki!\nÃ–sszes jÃ¡tÃ©k = %d, Ã¶sszes tipp = %d\n\n", nTipp, sumJÃ¡tÃ©k, sumTipp);
     
-    printf("Szeretnél még egyet játszani (i)? ");
+    printf("SzeretnÃ©l mÃ©g egyet jÃ¡tszani (i)? ");
     scanf_s(" %c", &i, 1);
 
     printf("\n");
@@ -141,19 +141,19 @@ int main()
     _asm
     {
         cmp i, 'i';
-        je mégEgy;
-        jne vége;
+        je mÃ©gEgy;
+        jne vÃ©ge;
     }
 
     _asm
     {
-    mégEgy:
-        jmp újKör;
+    mÃ©gEgy:
+        jmp ÃºjKÃ¶r;
     }
 
     _asm
     {
-        vége:
+        vÃ©ge:
     }
 
     
