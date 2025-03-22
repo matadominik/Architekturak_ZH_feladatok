@@ -1,9 +1,9 @@
 /*
-3. verziÛ:
-KÈszÌtsen el egy kockadob·s szimul·tort a kˆvetkezı mÛdon:
-ï	100-szor gener·ljon vÈletlen sz·mokat 1-6 kˆzˆtt
-ï	Sz·molja meg a dobott sz·mok ·tlag·t (csak egÈsz sz·m elÈg).
-ï	Õrja ki az eredmÈnyt a kÈpernyıre.
+3. verzi√≥:
+K√©sz√≠tsen el egy kockadob√°s szimul√°tort a k√∂vetkez≈ë m√≥don:
+-	100-szor gener√°ljon v√©letlen sz√°mokat 1-6 k√∂z√∂tt
+-	Sz√°molja meg a dobott sz√°mok √°tlag√°t (csak eg√©sz sz√°m el√©g).
+-	√çrja ki az eredm√©nyt a k√©perny≈ëre.
 */
 
 #include <iostream>
@@ -13,7 +13,7 @@ int main()
 {
     setlocale(LC_ALL, "HU");
 
-    int random, sum = 0, osztÛ = 100, ·tlag;
+    int random, sum = 0, oszt√≥ = 100, √°tlag;
 
     srand((unsigned)time(NULL));
 
@@ -42,12 +42,12 @@ int main()
     {
         mov eax, sum;
         mov edx, 0;
-        mov ebx, osztÛ;
-        div osztÛ;
-        mov ·tlag, eax;
+        mov ebx, oszt√≥;
+        div oszt√≥;
+        mov √°tlag, eax;
     }
 
-    printf("¡tlag = %d\n", ·tlag);
+    printf("√Åtlag = %d\n", √°tlag);
     
 
     return 0;
