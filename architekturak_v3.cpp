@@ -41,8 +41,7 @@ int main()
     _asm
     {
         mov eax, sum;
-        mov edx, 0;
-        mov ebx, osztó;
+        xor edx, edx;
         div osztó;
         mov átlag, eax;
     }
