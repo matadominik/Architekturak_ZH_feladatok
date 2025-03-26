@@ -1,9 +1,9 @@
 /*
-4. verziÛ:
-KÈszÌtsen egy oszt·lyzat ÈrtÈkelı szimul·tort a kˆvetkezıkÈppen:
--	KÈrjen be egy pontsz·mot 0-100 kˆzˆtt.
--	Gener·ljon 100 sz·mot 0-100 kˆzˆtt Ès sz·molja meg, h·ny pont nagyobb vagy egyenlı a bekÈrt sz·mn·l.
--	Õrja ki az eredmÈnyt a kÈpernyıre.
+4. verzi√≥:
+K√©sz√≠tsen egy oszt√°lyzat √©rt√©kel≈ë szimul√°tort a k√∂vetkez≈ëk√©ppen:
+-	K√©rjen be egy pontsz√°mot 0-100 k√∂z√∂tt.
+-	Gener√°ljon 100 sz√°mot 0-100 k√∂z√∂tt √©s sz√°molja meg, h√°ny pont nagyobb vagy egyenl≈ë a bek√©rt sz√°mn√°l.
+-	√çrja ki az eredm√©nyt a k√©perny≈ëre.
 */
 
 #include <iostream>
@@ -13,10 +13,10 @@ int main()
 {
 	setlocale(LC_ALL, "HU");
 
-	int pontsz·m, nNagyobb = 0;
+	int pontsz√°m, nNagyobbEgyenl≈ë = 0;
 
-	printf("Adjon egy pontsz·mot 0-100 = ");
-	scanf_s("%d", &pontsz·m);
+	printf("Adjon egy pontsz√°mot 0-100 = ");
+	scanf_s("%d", &pontsz√°m);
 
 	srand((unsigned)time(NULL));
 
@@ -32,16 +32,16 @@ int main()
 		xor edx, edx;
 		div ebx;
 
-		cmp edx, pontsz·m;
+		cmp edx, pontsz√°m;
 		jl semelyik;
 
-		inc nNagyobb;
+		inc nNagyobbEgyenl≈ë;
 
 		semelyik:
 		loop ciklus;
 	}
 
-	printf("Nagyobb = %d\n", nNagyobb);
+	printf("Nagyobb/egyenl≈ë = %d\n", nNagyobbEgyenl≈ë);
 
 
 	return 0;
